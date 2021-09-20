@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+control-messages
+{
+    color: #E82C0C;
+    margin: 6px 0;
+}
+
+ 
+  button[disabled] {
+    background-color: #b73396;
+    border-color: #a42e55;
+    opacity: .65;
+    cursor: not-allowed;
+  }
+  button {
+    background-color:rgb(236, 15, 181);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: slategrey;
+  }
+
+  select {
+    margin-top: 0.88px;  
+  }

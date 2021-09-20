@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  
+  <h2 class="text-center"><small>Contact Information</small></h2>
+  
+  <h4 class="text-center"><small>Please fill out your contact information below.</small></h4>
+
+    <form [formGroup]="userInfo" (submit)="saveUser()">
+        
+            <label class="height" for="name">Name<label style="color:red">*</label></label><br>
+            <div class="row">
+                <div class="col">
+                    <input formControlName="fname" id="fname" class="form-control"/>
+                    <control-messages [control]="userInfo.get('fname')"></control-messages>
+                </div>
+                <div class="col">
+                     <input formControlName="lname" id="lname" class="form-control"/>
+                    <control-messages [control]="userInfo.get('lname')"></control-messages>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                   <label><small>First Name</small></label>
+                </div>
+                <div class="col">
+                    <label><small>Last Name</small></label>
+                </div>
+            </div>
+                
+            <label class="height">Email<label style="color:red">*</label></label>
+            <input formControlName="email" id="email" class="form-control"/>
+            <control-messages [control]="userInfo.get('email')"></control-messages>
+            
+                <label class="height" >Phone<label style="color:red">*</label></label>
+                <input formControlName="phone" id="phone" class="form-control"/>
+                <control-messages [control]="userInfo.get('phone')"></control-messages>
+            
+           
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="city">City*</label>
+                        <input formControlName="city" id="city" class="form-control">
+                        <control-messages [control]="userInfo.get('city')"></control-messages>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                    <label for="state">State*</label>
+                     <select class="custom-select" formControlName="state" id="state" class="form-control">
+                        <option value="" disabled>Choose a state</option>
+                            <option *ngFor="let state of states">
+                                {{state.name}}
+                            </option>
+                            <control-messages [control]="userInfo.get('state')"></control-messages>      
+                    </select> 
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <label for="inputZip">Zip*</label>
+                        <input formControlName="zip" id="zip" class="form-control" >
+                        <control-messages [control]="userInfo.get('zip')"></control-messages>
+                    </div>
+                </div>
+
+                    <label class="height">Address<label style="color:red">*</label></label>
+                    <input formControlName="address" id="address" class="form-control"> 
+                    <control-messages [control]="userInfo.get('address')"></control-messages>
+
+                    <label for="comment">Comment*</label>
+                    <input formControlName="comment" id="comment" class="form-control">
+                    <control-messages [control]="userInfo.get('comment')"></control-messages>    
+                                     
+                <div class="container-fluid" class="text-center">
+                   <button type="submit" [disabled]="!userInfo.valid">SUBMIT FORM</button>  
+                </div>
+    </form> 
+    <!--{{userInfo.value | json}} -->
+     
+</div>   
+
+

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Assignment13": {
+    "Assignment11": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Assignment13",
+            "outputPath": "dist/Assignment11",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,6 +27,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -68,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Assignment13:build:production"
+              "browserTarget": "Assignment11:build:production"
             },
             "development": {
-              "browserTarget": "Assignment13:build:development"
+              "browserTarget": "Assignment11:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Assignment13:build"
+            "browserTarget": "Assignment11:build"
           }
         },
         "test": {
@@ -102,5 +104,5 @@
       }
     }
   },
-  "defaultProject": "Assignment13"
+  "defaultProject": "Assignment11"
 }
