@@ -3,10 +3,10 @@ export class ValidationService
     static getValidatorErrorMessage(validatorName: string, validatorValue?: any) 
     {
       let config :any = {
-        'required': 'Required',
+        'required': 'This Field is Required',
         'invalidName':'Invalid Name',
         'invalidEmailAddress': 'Invalid email address',
-        'invalidPhone': 'Invalid Phone Number',
+        'invalidPhone': 'Phone number should be 10 Digits ',
         'invalidCity':'Invalid City',
         'invalidZip': 'Invalid Zip Number',
         'minlength': `Minimum length ${validatorValue.requiredLength}`
@@ -64,7 +64,7 @@ export class ValidationService
 
     static zipValidator(control:any)
     {
-      if(control.value.match( /^[0-9]{6}$/))
+      if(control.value.match( /^[0-9]{5,6}$/))
       {
         return null;
       }
